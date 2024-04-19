@@ -12,6 +12,11 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 
 from pathlib import Path
 
+from petstagram import common, accounts
+from petstagram.common.apps import CommonConfig
+from petstagram.pets.apps import PetsConfig
+from petstagram.photos.apps import PhotosConfig
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -31,12 +36,22 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    # Django apps
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    # Third-party apps
+
+
+    # Project apps
+    "petstagram.common.apps.CommonConfig",
+    "petstagram.accounts.apps.AccountsConfig",
+    "petstagram.photos.apps.PhotosConfig",
+    "petstagram.pets.apps.PetsConfig"
 ]
 
 MIDDLEWARE = [
@@ -118,6 +133,9 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+STATICFILES_DIRS = (
+    BASE_DIR / "staticfiles"
+)
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
