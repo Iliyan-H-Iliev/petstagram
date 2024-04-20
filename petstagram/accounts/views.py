@@ -3,30 +3,30 @@ from django.shortcuts import render
 
 # Create your views here.
 
-def signup_profile(request):
+def signup_user(request):
     context = {}
-    return render(request, 'accounts/signup_profile.html', context)
+    return render(request, 'accounts/signup_user.html', context)
 
 
-def signin_profile(request):
+def signin_user(request):
     context = {}
-    return render(request, 'accounts/signin_profile.html', context)
+    return render(request, 'accounts/signin_user.html', context)
 
 
-def signout_profile(request):
+def signout_user(request):
     return None
 
 
-def details_profile(request):
+def details_profile(request, pk):
     context = {}
     return render(request, 'accounts/details_profile.html', context)
 
 
-def edit_profile(request):
+def edit_profile(request, pk):
     context = {}
     return render(request, 'accounts/edit_profile.html', context)
 
 
-def delete_profile(request):
+def delete_profile(request, pk):
     context = {}
     return render(request, 'accounts/delete_profile.html', context)
