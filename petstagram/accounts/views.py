@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 
 # Create your views here.
@@ -14,7 +14,7 @@ def signin_user(request):
 
 
 def signout_user(request):
-    return None
+    return redirect('index')
 
 
 def details_profile(request, pk):
