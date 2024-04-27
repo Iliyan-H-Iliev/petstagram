@@ -449,3 +449,19 @@ div.footer {
     color: #ff0000;
 }
 
+#profile {
+    color: #323279;
+}
+
+#log_out {
+    color: darkred;
+}
+
+#login {
+    color: darkgreen;
+}
+
+#register {
+    color: orangered;
+}
+
