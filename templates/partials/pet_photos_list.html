@@ -1,0 +1,11 @@
+{% load static %}
+{% for photo in photo_list %}
+    <!-- Start Pet Photos Post Section -->
+    <!-- Start First Pet Photo Post -->
+    {% include "partials/pet_list_item.html" with photo=photo %}
+{% empty %}
+    <img class="no-posts" src="{% static 'images/no_posts.png' %}" alt="no posts image">
+{% endfor %}
+   
+
+            

@@ -1,5 +1,8 @@
 from django.shortcuts import render
 
+from petstagram.photos.models import PetPhoto
+
+
 # Create your views here.
 
 
@@ -9,7 +12,9 @@ def add_photo(request):
 
 
 def details_photo(request, pk):
-    context = {}
+    context = {
+        "pet_photo": PetPhoto.objects.get(pk=pk),
+    }
     return render(request, 'photos/details_photo.html', context)
 
 
